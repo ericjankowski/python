@@ -1,0 +1,3 @@
+jankenstein = "NOOB!"
+
+print(jankenstein)
