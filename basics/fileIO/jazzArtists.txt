@@ -1,0 +1,5 @@
+John Coltrane,Tenor Saxophone
+Louis Armstrong,Trumpet
+Miles Davis,Trumpet
+Charlie Parker,Alto Saxophone
+Duke Ellington,Piano
