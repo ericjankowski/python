@@ -1,0 +1,6 @@
+christmas_songs = ["carol of the bells","jingle bells","up on the housetop"]
+
+all_caps_christmas_songs = [song.upper() for song in christmas_songs]
+
+print(christmas_songs)
+print(all_caps_christmas_songs)
