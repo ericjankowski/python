@@ -1,3 +1,19 @@
+class Athlete(list):
+	def __init__(self, name, dob=None, times=[]):
+		list.__init__([])
+		self.name = name
+		self.dob = dob
+		self.extend(times)
+		
+	def top_three_times(self):
+		return(sorted(set([sanitize(t) for t in self]))[0:3])
+		
+	def add_time(self, time):
+		self.times.append(time)
+		
+	def add_times(self, new_times):
+		self.times.extend(new_times)
+		
 def sanitize(time_string):
 	if '-' in time_string:
 		splitter = '-'
@@ -13,9 +29,7 @@ def get_coach_data(filename):
 		with open(filename) as f:
 			data = f.readline()
 		temp_list = data.strip().split(',')
-		return({'Name' : temp_list.pop(0),
-				'Date of Birth' : temp_list.pop(0),
-				'Times' : str(sorted(set([sanitize(t) for t in temp_list]))[0:3])})
+		return(Athlete(temp_list.pop(0),temp_list.pop(0),temp_list))
 	except IOError as ioerr:
 		print('File error: ' + str(ioerr))
 		return(None)
@@ -26,7 +40,7 @@ julie = get_coach_data('julie2.txt')
 mikey = get_coach_data('mikey2.txt')
 sarah = get_coach_data('sarah2.txt')
 
-print(james['Name'] + "'s fastest times are: " + james['Times'])
-print(julie['Name'] + "'s fastest times are: " + julie['Times'])
-print(mikey['Name'] + "'s fastest times are: " + mikey['Times'])
-print(sarah['Name'] + "'s fastest times are: " + sarah['Times'])
+print(james.name + "'s fastest times are: " + str(james.top_three_times()))
+print(julie.name + "'s fastest times are: " + str(julie.top_three_times()))
+print(mikey.name + "'s fastest times are: " + str(mikey.top_three_times()))
+print(sarah.name + "'s fastest times are: " + str(sarah.top_three_times()))
