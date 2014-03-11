@@ -1,7 +1,7 @@
 x = int(raw_input('Enter an integer: '))
 ans = 0
 while ans**3 < abs(x):
-	ans = ans + 1
+	ans = ans + 1 
 if ans**3 != abs(x):
 	print x, 'is not a perfect cube'
 else:

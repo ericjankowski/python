@@ -1,5 +1,5 @@
 epsilon = 0.01
-y = 24
+y = int(raw_input('Enter an integer: '))
 numGuesses = 0
 guess = y/2.0
 while abs(guess*guess - y) >= epsilon:
